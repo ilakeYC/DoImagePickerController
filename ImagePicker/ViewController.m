@@ -36,6 +36,7 @@
 		iv.image = nil;
 	
     DoImagePickerController *cont = [[DoImagePickerController alloc] initWithNibName:@"DoImagePickerController" bundle:nil];
+//    UINavigationController *contNC = [[UINavigationController alloc] initWithRootViewController:cont];
     cont.delegate = self;
     cont.nResultType = DO_PICKER_RESULT_UIIMAGE;
     if (_sgMaxCount.selectedSegmentIndex == 0)

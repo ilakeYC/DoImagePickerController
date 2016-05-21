@@ -78,6 +78,7 @@
     // side buttons
     _btUp.backgroundColor = DO_SIDE_BUTTON_COLOR;
     _btDown.backgroundColor = DO_SIDE_BUTTON_COLOR;
+    _btCamera.backgroundColor = DO_SIDE_BUTTON_COLOR;
     
     CALayer *layer1 = [_btDown layer];
 	[layer1 setMasksToBounds:YES];
@@ -86,6 +87,10 @@
     CALayer *layer2 = [_btUp layer];
 	[layer2 setMasksToBounds:YES];
 	[layer2 setCornerRadius:_btUp.frame.size.height / 2.0 - 1];
+    
+    CALayer *layer3 = [_btCamera layer];
+    [layer3 setMasksToBounds:YES];
+    [layer3 setCornerRadius:_btCamera.frame.size.height / 2.0 - 1];
     
     // table view
     UIImageView *ivHeader = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _tvAlbumList.frame.size.width, 0.5)];
@@ -233,6 +238,12 @@
 - (IBAction)onDown:(id)sender
 {
     [_cvPhotoList scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:[ASSETHELPER getPhotoCountOfCurrentGroup] - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+}
+
+- (IBAction)onCamera:(id)sender {
+    
+    
+    
 }
 
 #pragma mark - UITableViewDelegate for selecting album
